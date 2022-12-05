@@ -23,11 +23,11 @@ services:
       - "traefik.docker.network=traefik-net"
       # http endpoint
       - "traefik.http.routers.portainer-web.entrypoints=web"
-      - "traefik.http.routers.portainer-web.rule=Host(`${PPORTAINER_CONT_URL}`)"
+      - "traefik.http.routers.portainer-web.rule=Host(`${PORTAINER_CONT_URL}`)"
       - "traefik.http.routers.portainer-web.middlewares=portainer-websecure-redir"
       # https endpoint
       - "traefik.http.routers.portainer-web-secure.entrypoints=websecure"
-      - "traefik.http.routers.portainer-web-secure.rule=Host(`${PPORTAINER_CONT_URL}`)"
+      - "traefik.http.routers.portainer-web-secure.rule=Host(`${PORTAINER_CONT_URL}`)"
       - "traefik.http.routers.portainer-web-secure.tls=true"
       - "traefik.http.routers.portainer-web-secure.tls.certresolver=lets-encrypt"
       - "traefik.http.routers.portainer-web-secure.service=portainer-service"
