@@ -18,21 +18,17 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./data:/data
     labels:
+      # enbale watchtower updates
+      - "com.centurylinklabs.watchtower.enable=true"
       # enable traefik
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-net"
-      # http endpoint
-      - "traefik.http.routers.portainer-web.entrypoints=web"
-      - "traefik.http.routers.portainer-web.rule=Host(`${PORTAINER_CONT_URL}`)"
-      - "traefik.http.routers.portainer-web.middlewares=portainer-websecure-redir"
       # https endpoint
       - "traefik.http.routers.portainer-web-secure.entrypoints=websecure"
       - "traefik.http.routers.portainer-web-secure.rule=Host(`${PORTAINER_CONT_URL}`)"
       - "traefik.http.routers.portainer-web-secure.tls=true"
       - "traefik.http.routers.portainer-web-secure.tls.certresolver=lets-encrypt"
       - "traefik.http.routers.portainer-web-secure.service=portainer-service"
-      # middlewares
-      - "traefik.http.middlewares.portainer-websecure-redir.redirectscheme.scheme=https"
       # services
       - "traefik.http.services.portainer-service.loadbalancer.server.port=9000"
 
