@@ -1,6 +1,6 @@
 # container-portainer
 
-A Docker compose container setup for [portainer](https://www.portainer.io/).
+A Docker compose container setup for [Portainer](https://www.portainer.io/).
 
 ## Table of contents
 
