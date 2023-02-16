@@ -1,30 +1,36 @@
 # container-portainer
 
-docker compose container setup for [portainer](https://www.portainer.io/).
+A Docker compose container setup for [portainer](https://www.portainer.io/).
 
-## setup
+## Table of contents
 
-0. requirements
+- [container-portainer](#container-portainer)
+  - [Table of contents](#table-of-contents)
+  - [Setup](#setup)
 
-   - docker
-   - docker-compose
-   - a running [traefik instance](https://github.com/jonas-merkle/container-traefik)
+## Setup
 
-1. add environment variables
+0. Requirements
+
+   - Docker
+   - Docker Compose
+   - A running [Traefik instance](https://github.com/jonas-merkle/container-traefik)
+
+1. Add environment variables
+
+    Add the missing information for the environment variables:
 
     ```bash
     nano .env
     ```
 
-    add the missing information for the environment variables
-
-2. start container
+2. Start container
 
     ```bash
     docker-compose up -d
     ````
 
-3. stop container
+3. Stop container
 
     ```bash
     docker-compose down
