@@ -23,6 +23,12 @@ A Docker compose container setup for [Portainer](https://www.portainer.io/).
     ```bash
     nano .env
     ```
+    
+    Mark the `.env` file so it's not tracked by git:
+
+    ```bash
+    git update-index --assume-unchanged .env
+    ```
 
 2. Start container
 
